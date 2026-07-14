@@ -16,7 +16,7 @@ export default async function Blog({
 
   return (
     <article className="prose prose-lg dark:prose-invert text-base">
-      <h1 className="mb-4">{blog.frontmatter.title}</h1>
+      <h1 className="mb-4">#{blog.frontmatter.order}: {blog.frontmatter.title}</h1>
 
       <p className="mb-0"><span className="bold uppercase">Published: </span>{blog.frontmatter.date}</p>
 

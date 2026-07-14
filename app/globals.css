@@ -33,3 +33,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
 }
+
+.highlighted {
+  background: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 0 0.1rem;
+}

@@ -5,84 +5,35 @@ type: "personal"
 order: 3
 ---
 
-# Test Project
+## Overview
 
-This is a test MDX page to see how different markdown elements render.
+<span className="highlighted">what should we watch?</span> is a web application designed to solve a
+common problem among movie fans: deciding what to watch together. The application allows users to
+input multiple Letterboxd usernames and automatically finds movies that appear across their
+watchlists, eliminating the need to manually compare lists.
 
-## Introduction
+The application supports comparisons between up to
+<span className="highlighted">10 users at once</span>, returning movies that appear in more than
+50% of the provided watchlists. This allows groups of friends to quickly discover movies they
+already have in common.
 
-This is a paragraph with **bold text**, *italic text*, and ~~strikethrough text~~.
+![What Should We Watch? screenshot](/images/experience/wsww-1.png)
 
-You can also include [links](https://nextjs.org) inside your content.
+The frontend was built using <span className="highlighted">React</span>, with a
+<span className="highlighted">Python Flask backend</span> responsible for retrieving, parsing, and
+processing Letterboxd watchlist data. To collect movie data, the backend utilizes
+<span className="highlighted">Letterboxdpy</span>, a Python-based web scraping library that
+automates the retrieval of user watchlists.
 
----
+One of the main technical challenges with this project was optimizing the process of repeatedly
+fetching and comparing watchlist data. To address this, I implemented
+<span className="highlighted">Redis caching</span> to store previously retrieved results, reducing
+unnecessary requests and improving overall application performance.
 
-## Headings
+![What Should We Watch? screenshot](/images/experience/wsww-2.png)
 
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
----
-
-## Lists
-
-### Unordered List
-
-- React
-- Next.js
-- TypeScript
-- PostgreSQL
-- Prisma
-
-### Ordered List
-
-1. Plan the project
-2. Build the feature
-3. Test everything
-4. Deploy
-
-### Nested Lists
-
-- Frontend
-  - React
-  - Tailwind CSS
-  - Next.js
-- Backend
-  - Node.js
-  - PostgreSQL
-  - Prisma
-
----
-
-## Task List (GFM)
-
-- [x] Create Next.js app
-- [x] Add MDX support
-- [ ] Add authentication
-- [ ] Deploy project
-
----
-
-## Blockquotes
-
-> This is a blockquote.
->
-> It can span multiple lines.
-
----
-
-## Code
-
-Inline code:
-
-```ts
-const greeting = "Hello, MDX!";
+Building this project gave me experience working with a
+<span className="highlighted">multi-service application architecture</span>, connecting a React
+frontend with a Flask API backend while managing external data retrieval and caching strategies.
+Future improvements for the application include providing additional movie details and allowing
+users to see which members of their group have each movie saved on their watchlist.

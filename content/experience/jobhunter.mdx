@@ -5,84 +5,36 @@ type: "personal"
 order: 4
 ---
 
-# Test Project
+## Overview
 
-This is a test MDX page to see how different markdown elements render.
+<span className="highlighted">Jobhunter</span> is a web application designed to make the job
+application process easier by providing users with a centralized place to track and manage their
+applications. Created during my own job search, the goal of this project was to solve a problem I
+was personally experiencing: keeping track of where I had applied, application statuses, and
+important details throughout the hiring process.
 
-## Introduction
+The application allows users to create an account and maintain an organized archive of their job
+applications. Users can record details such as position title, company, location, notes, and
+application status, allowing them to quickly view the current state of their job search from a
+single dashboard.
 
-This is a paragraph with **bold text**, *italic text*, and ~~strikethrough text~~.
+![Jobhunter screenshot](/images/experience/jobhunter-1.png)
 
-You can also include [links](https://nextjs.org) inside your content.
+Applications can be updated throughout the hiring process, with statuses including
+<span className="highlighted">Open, Interviewing, and No Offer</span>. Applications marked as
+interviewing also allow users to record interview dates and locations, providing additional context
+for upcoming opportunities.
 
----
+The application was built using a <span className="highlighted">MERN stack</span>, utilizing
+<span className="highlighted">React</span> for the frontend and
+<span className="highlighted">Node.js, Express.js, and MongoDB</span> for the backend. I designed
+the application structure, created RESTful API endpoints, implemented user authentication, and
+managed data persistence for user and application records.
 
-## Headings
+Building Jobhunter gave me experience developing a complete application from concept to deployment.
+It helped strengthen my understanding of full-stack architecture, CRUD operations, authentication
+flows, and designing software around a real-world user problem.
 
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
----
-
-## Lists
-
-### Unordered List
-
-- React
-- Next.js
-- TypeScript
-- PostgreSQL
-- Prisma
-
-### Ordered List
-
-1. Plan the project
-2. Build the feature
-3. Test everything
-4. Deploy
-
-### Nested Lists
-
-- Frontend
-  - React
-  - Tailwind CSS
-  - Next.js
-- Backend
-  - Node.js
-  - PostgreSQL
-  - Prisma
-
----
-
-## Task List (GFM)
-
-- [x] Create Next.js app
-- [x] Add MDX support
-- [ ] Add authentication
-- [ ] Deploy project
-
----
-
-## Blockquotes
-
-> This is a blockquote.
->
-> It can span multiple lines.
-
----
-
-## Code
-
-Inline code:
-
-```ts
-const greeting = "Hello, MDX!";
+While the current version serves as an MVP, future improvements include adding application
+filtering and sorting, improving responsiveness, and continuing to refine the overall user
+experience and visual design.
