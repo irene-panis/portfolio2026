@@ -1,12 +1,15 @@
-import { LIST_OF_BLOG_POSTS, BlogPost } from "./_helpers";
+import { getAllContent } from "@/lib/content";
+import { BlogPost } from "@/types/BlogPost";
+
+const posts = getAllContent<BlogPost>("blog");
 
 const BlogList = () => {
   return (
     <div>
       <h2 className="text-muted uppercase font-semibold tracking-wider border-b-1 border-accent mb-4">Blog</h2>
       <div className="flex flex-col gap-6">
-        {LIST_OF_BLOG_POSTS.map((post: BlogPost) => (
-          <a href={`blog/${post.slug}`} key={post.title} className="hover:bg-accent/15 transition duration-100 ease-in-out">
+        {posts.map((post: BlogPost) => (
+          <a href={`blog/${post.slug}`} key={`${post.slug}-${post.title}`} className="hover:bg-accent/15 transition duration-100 ease-in-out">
             <div className="flex w-full justify-between mb-1">
               <span>{post.title}</span>
               <span className="text-sm uppercase text-muted">{post.date}</span>

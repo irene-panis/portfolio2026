@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} h-full overflow-hidden bg-background text-foreground font-sans antialiased`}
       >
-        <div className="mx-auto flex h-full w-full max-w-xl flex-col gap-12 items-center px-6 pt-24">
+        <div className="mx-auto flex h-full w-full max-w-xl flex-col gap-12 items-center px-6 pt-12 md:pt-24">
           <Link href="/" className="group self-start">
             <Image
               src="/icon.svg"
