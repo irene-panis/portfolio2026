@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import "@radix-ui/colors/gray-dark.css";
+
+
+:root {
+  --background: var(--gray-1);
+  --foreground: var(--gray-12);
+  --muted: var(--gray-11);
+  --surface: var(--gray-2);
+  --accent: var(--gray-9);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/old Edge */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+}
