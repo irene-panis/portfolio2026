@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark h-full">
       <body
-        className={`${manrope.variable} h-full overflow-hidden bg-background text-foreground font-sans antialiased`}
+        className={`${manrope.variable} h-full bg-background text-foreground font-sans antialiased`}
       >
         <div className="mx-auto flex h-full w-full max-w-xl flex-col gap-12 items-center px-6 pt-12 md:pt-24">
           <Link href="/" className="group self-start">
@@ -34,10 +34,9 @@ export default function RootLayout({
             />
           </Link>
 
-          <main className="flex-1 overflow-y-auto scrollbar-none pb-24">
+          <main className="flex-1 scrollbar-none pb-24">
             {children}
           </main>
-          <div className="pointer-events-none absolute bottom-0 left-0 h-12 w-full bg-gradient-to-t from-background to-transparent" />
         </div>
       </body>
     </html>
