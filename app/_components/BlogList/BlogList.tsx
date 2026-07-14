@@ -1,5 +1,5 @@
 import { getAllContent } from "@/lib/content";
-import { BlogPost } from "@/types/BlogPost";
+import { BlogPost } from "@/types/blog";
 
 const posts = getAllContent<BlogPost>("blog");
 
