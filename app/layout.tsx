@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -23,6 +24,9 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} h-full bg-background text-foreground font-sans antialiased`}
       >
+        <GoogleAnalytics
+          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!}
+        />
         <div className="mx-auto flex h-full w-full max-w-xl flex-col gap-12 px-6 pt-12 md:pt-24">
           <Link href="/" className="group self-start">
             <Image
