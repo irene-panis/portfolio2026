@@ -35,8 +35,8 @@ body {
 }
 
 .highlighted {
-  background: yellow;
-  color: black;
+  background: #f4cb29;
+  color: var(--background);
   font-weight: bold;
   padding: 0 0.1rem;
 }

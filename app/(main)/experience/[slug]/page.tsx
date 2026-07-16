@@ -2,6 +2,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getContentBySlug } from "@/lib/content";
 import { Experience } from "@/types/experience";
+import Link from "next/link";
 
 export default async function WorkPage({
   params,
@@ -28,6 +29,9 @@ export default async function WorkPage({
           },
         }}
       />
+      <Link href="/" className="hover:bg-white hover:text-background transition duration-200 ease-in-out italic">
+        ← Back to home
+      </Link>
     </article>
   );
 }

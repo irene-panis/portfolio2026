@@ -2,6 +2,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getContentBySlug } from "@/lib/content";
 import { BlogPost } from "@/types/blog";
+import Link from "next/link";
 
 export default async function Blog({
   params,
@@ -33,6 +34,9 @@ export default async function Blog({
           },
         }}
       />
+      <Link href="/" className="hover:bg-white hover:text-background transition duration-200 ease-in-out italic">
+        ← Back to home
+      </Link>
     </article>
   );
 }
