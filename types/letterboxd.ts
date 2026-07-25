@@ -3,7 +3,7 @@ export interface LetterboxdMovie {
   slug: string;
   year: number;
   myRating: number;
-  poster: string;
+  poster: string | null;
 }
 
 export interface LetterboxdData {

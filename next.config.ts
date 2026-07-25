@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "s.ltrbxd.com",
       },
+      {
+        protocol: "https",
+        hostname: "i.gr-assets.com",
+      },
     ],
   },
 };
