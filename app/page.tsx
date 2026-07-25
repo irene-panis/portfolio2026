@@ -1,5 +1,10 @@
 import ExperienceList from './_components/ExperienceList';
 import BlogList from './_components/BlogList';
+import MovieList from './_components/MovieList';
+import HomeTabs from './_components/HomeTabs';
+
+const linkClassName =
+  'underline-offset-4 underline hover:bg-white hover:text-background transition duration-200 ease-in-out';
 
 export default function Home() {
   return (
@@ -13,27 +18,44 @@ export default function Home() {
           film photography, true crime documentaries, and 100 Thieves VALORANT.
         </p>
         <p>Let&apos;s chat sometime :)</p>
-        <div className="flex gap-4">
+        <p>
+          Find me on{' '}
           <a
             href="https://github.com/irene-panis"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent px-4 rounded-full hover:bg-white hover:text-background transition duration-200 ease-in-out"
+            className={linkClassName}
           >
             GitHub
-          </a>
+          </a>{' '}
+          and{' '}
           <a
             href="https://linkedin.com/in/irene-panis"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent px-4 rounded-full hover:bg-white hover:text-background transition duration-200 ease-in-out"
+            className={linkClassName}
           >
             LinkedIn
           </a>
-        </div>
+          .
+        </p>
       </div>
-      <ExperienceList />
-      <BlogList />
+      <div className="flex flex-col gap-4">
+        <HomeTabs
+          projects={
+            <div className="flex flex-col gap-12">
+              <ExperienceList />
+              <BlogList />
+            </div>
+          }
+          shelf={
+            <>
+              <p className="text-muted italic text-sm">(a quick look at what movies, books, & music i&apos;m checking out right now)</p>
+              <MovieList />
+            </>
+          }
+        />
+      </div>
     </div>
   );
 }
