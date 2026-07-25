@@ -4,12 +4,25 @@ type ShelfCoverProps = {
   imageUrl?: string | null;
   alt: string;
   fallbackText: string;
+  aspectRatio?: "2/3" | "square";
 };
 
-const ShelfCover = ({ imageUrl, alt, fallbackText }: ShelfCoverProps) => {
+const aspectClasses = {
+  "2/3": "aspect-[2/3]",
+  square: "aspect-square",
+} as const;
+
+const ShelfCover = ({
+  imageUrl,
+  alt,
+  fallbackText,
+  aspectRatio = "2/3",
+}: ShelfCoverProps) => {
+  const aspectClass = aspectClasses[aspectRatio];
+
   if (imageUrl) {
     return (
-      <div className="relative aspect-[2/3] w-full overflow-hidden rounded-sm">
+      <div className={`relative ${aspectClass} w-full overflow-hidden rounded-sm`}>
         <Image
           src={imageUrl}
           alt={alt}
@@ -22,7 +35,7 @@ const ShelfCover = ({ imageUrl, alt, fallbackText }: ShelfCoverProps) => {
   }
 
   return (
-    <div className="flex aspect-[2/3] w-full items-center justify-center rounded-sm bg-accent p-2 text-center">
+    <div className={`flex ${aspectClass} w-full items-center justify-center rounded-sm bg-accent p-2 text-center`}>
       <p className="line-clamp-5 text-xs font-medium leading-tight">
         {fallbackText}
       </p>

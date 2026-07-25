@@ -3,6 +3,7 @@ import BlogList from './_components/BlogList';
 import MovieList from './_components/MovieList';
 import HomeTabs from './_components/HomeTabs';
 import BookList from './_components/BookList';
+import MusicList from './_components/MusicList';
 
 const linkClassName =
   'underline-offset-4 underline hover:bg-white hover:text-background transition duration-200 ease-in-out';
@@ -54,6 +55,7 @@ export default function Home() {
               <p className="text-muted italic text-sm">(a quick look at what movies, books, & music i&apos;m checking out right now)</p>
               <MovieList />
               <BookList />
+              <MusicList />
             </>
           }
         />

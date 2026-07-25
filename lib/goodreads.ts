@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import GoodreadsShelf from "goodreads-bookshelf-api";
 import type { GoodreadsBook } from "@/types/goodreads";
 
@@ -7,6 +8,9 @@ const myReadShelf = new GoodreadsShelf({
 });
 
 export async function getGoodreadsData(): Promise<GoodreadsBook[] | null> {
+  "use cache";
+  cacheLife({ revalidate: 86400 });
+
   try {
     const data = (await myReadShelf.fetch()).slice(0, 5);
     return data.map((book) => ({
