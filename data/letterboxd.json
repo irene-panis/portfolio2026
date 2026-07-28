@@ -3,6 +3,13 @@
   "profileUrl": "https://letterboxd.com/irenesucks/",
   "movies": [
     {
+      "title": "Suze",
+      "slug": "suze-2023",
+      "year": 2023,
+      "myRating": 3.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/9/3/7/1/1/9/937119-suze-2023-0-600-0-900-crop.jpg"
+    },
+    {
       "title": "Scary Movie",
       "slug": "scary-movie-2026",
       "year": 2026,
@@ -29,13 +36,6 @@
       "year": 2026,
       "myRating": 3.5,
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/0/5/4/9/4/1205494-the-drama-0-600-0-900-crop.jpg"
-    },
-    {
-      "title": "Forbidden Fruits",
-      "slug": "forbidden-fruits-2026",
-      "year": 2026,
-      "myRating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/1/3/2/7/7/7/5/1327775-forbidden-fruits-2026-0-600-0-900-crop.jpg"
     }
   ]
 }
