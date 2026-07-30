@@ -1,7 +1,9 @@
 import { getAllContent } from "@/lib/content";
 import { BlogPost } from "@/types/blog";
 
-const posts = getAllContent<BlogPost>("blog");
+const posts = getAllContent<BlogPost>("blog").sort(
+  (a, b) => (b.order ?? 0) - (a.order ?? 0)
+);
 
 const BlogList = () => {
   return (
@@ -10,9 +12,9 @@ const BlogList = () => {
       <div className="flex flex-col gap-6">
         {posts.map((post: BlogPost) => (
           <a href={`blog/${post.slug}`} key={`${post.slug}-${post.title}`} className="hover:bg-accent/15 transition duration-100 ease-in-out">
-            <div className="flex w-full justify-between mb-1">
-              <span>{post.title}</span>
-              <span className="text-sm uppercase text-muted">{post.date}</span>
+            <div className="flex w-full justify-between gap-4 mb-1">
+              <span className="min-w-0">{post.title}</span>
+              <span className="shrink-0 whitespace-nowrap text-sm uppercase text-muted">{post.date}</span>
             </div>
             <div className="flex gap-2 flex-wrap">
               {(post.tags ?? []).map((tag: string) => (

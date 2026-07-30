@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { cacheLife } from "next/cache";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getContentBySlug } from "@/lib/content";
@@ -13,24 +12,17 @@ export default function WorkPage({
 }) {
   return (
     <Suspense>
-      <ExperiencePage params={params} />
+      <ExperienceArticle params={params} />
     </Suspense>
   );
 }
 
-async function ExperiencePage({
+async function ExperienceArticle({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  return <ExperienceArticle slug={slug} />;
-}
-
-async function ExperienceArticle({ slug }: { slug: string }) {
-  "use cache";
-  cacheLife("max");
-
   const work = getContentBySlug<Experience>("experience", slug);
 
   return (

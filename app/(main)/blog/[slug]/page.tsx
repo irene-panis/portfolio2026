@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { cacheLife } from "next/cache";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getContentBySlug } from "@/lib/content";
@@ -13,26 +12,18 @@ export default function Blog({
 }) {
   return (
     <Suspense>
-      <BlogPage params={params} />
+      <BlogArticle params={params} />
     </Suspense>
   );
 }
 
-async function BlogPage({
+async function BlogArticle({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  return <BlogArticle slug={slug} />;
-}
-
-async function BlogArticle({ slug }: { slug: string }) {
-  "use cache";
-  cacheLife("max");
-
   const blog = getContentBySlug<BlogPost>("blog", slug);
-
   const tags = (blog.frontmatter.tags ?? []).join(", ");
 
   return (

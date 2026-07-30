@@ -1,0 +1,96 @@
+---
+title: "introducing my shelf, and a personal request to letterboxd to make your api public"
+date: "29 Jul 2026"
+tags:
+  - APIs
+  - Python
+order: 2
+---
+
+I recently added something to my portfolio I'm super excited about: a "Shelf" tab which 
+showcases the latest movies, books, and music I'm getting into.
+
+I think what excites me the most about this little part of my portfolio is that it feels 
+like a small slice of "me" - who I am on a daily basis, what I get up to when I'm not 
+deep in the coding grind. It feels human, which I think in tech we need a little bit more 
+of!
+
+![Screenshot of my portfolio shelf: Movies section](/images/blog/shelf-1.png)
+
+The first section of my shelf is home to my five most recently watched movies, 
+along with the rating I gave them on Letterboxd.
+
+Now, my setup for this particular part of my shelf is a little weird: basically, we're 
+using [Letterboxdpy](https://github.com/nmcassa/letterboxdpy), a Python library for 
+scraping Letterboxd, to grab my profile data. Grabbing my diary allows me to get a bunch of 
+my most recently watched movies and my ratings for them, and I cap this at five. 
+Then, I grab each movie's information in order to access the movie poster, its name, and 
+year. This all lives in a script file called `fetch_letterboxd.py`.
+
+I then take all of this information, bundle it up, and write it to a JSON file. 
+Then I have a function `getLetterboxdData` in a TypeScript file which reads the 
+JSON and renders the data you see above.
+
+Then I have a GitHub Action set up to run every day that runs `fetch_letterboxd.py` 
+and pushes the new JSON file to my repo.
+
+Does this feel like more moving parts than I'd like? Yes. Do I want a GitHub Action to be 
+pushing to my portfolio repo every day? No.
+
+So this is a formal and very personal and very nice request to Letterboxd to please make 
+your API public so I don't have to use Python web scrapers 🙏.
+
+![Screenshot of my portfolio shelf: Books section](/images/blog/shelf-2.png)
+
+Speaking of companies that do not have a public-use API, the second section of my shelf 
+is home to my most recently read books and my ratings for them!
+
+This data is grabbed from my Goodreads profile. I was incredibly, insurmountably 
+disappointed to learn that the Goodreads public API was shut down several years 
+ago. 
+
+This forced me to look for an alternative, much like what I had to do in the case of 
+grabbing my Letterboxd data, but I was much more fortunate this time to find the 
+[Goodreads Bookshelf API](https://github.com/tnmyk/goodreads-bookshelf-api/), a Node.js 
+package that allows me to grab my latest Goodreads data with a simple fetch.
+
+No need for writing or reading any files! A super painless, easy implementation. We 
+love you Goodreads Bookshelf API :)
+
+![Screenshot of my portfolio shelf: Music section](/images/blog/shelf-3.png)
+
+Last but not least, we also have a section for the last five songs I listened to on 
+Spotify.
+
+This required me to interact with the Spotify Web API which is a little more involved 
+than what I did for the previous two sections.
+
+![Spotify OAuth flow diagram](/images/blog/shelf-4.png)
+
+Basically, I had to go through Spotify's OAuth flow once. After creating a Spotify Developer 
+app, I had to perform a one-time login to get a  refresh token. Then, I stored that 
+refresh token as an environment variable. This token  would later be exchanged for 
+an access token that I could use to hit the "recently played tracks" endpoint.
+
+Lastly, since I'm using APIs, scrapers, and what have you, as well as wanting to keep 
+this shelf as up-to-date as possible, I had to think about how often I wanted to grab data - 
+because I wasn't about to have new fetches <i>every</i> single time we view the shelf.
+
+For my movies, the "cache" is basically the JSON file that lives in my repo. The GitHub 
+Action I've set up to write to that file runs daily, and only commits the new JSON file if 
+anything on it has changed. So every time we navigate to my shelf we're essentially just 
+reading the one JSON file over and over again.
+
+Then, for book and music data, we opt for Next.js caching. We use what's called "Cache 
+Components"; basically, at the top of my fetch functions, I add `"use cache`" to tell 
+Next.js to remember the function's result. Then, I use `cacheLife({ revalidate: X })` to 
+tell it to reuse that result for X seconds before fetching again.
+
+For Spotify, I set the `revalidate` value to 15 minutes; for Goodreads, it's set to 24 hours.
+
+And that's all there is to it! All in all, a pretty simple implementation but still a fun 
+few hours dedicated to building what's now one of my favorite parts of my portfolio.
+
+Hope you like it as much as I do!
+
+Irene
