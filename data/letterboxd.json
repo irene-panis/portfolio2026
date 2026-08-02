@@ -3,6 +3,13 @@
   "profileUrl": "https://letterboxd.com/irenesucks/",
   "movies": [
     {
+      "title": "Spider-Man: Brand New Day",
+      "slug": "spider-man-brand-new-day",
+      "year": 2026,
+      "myRating": 4.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/8/7/2/8/7/1/872871-spider-man-brand-new-day-0-600-0-900-crop.jpg"
+    },
+    {
       "title": "Suze",
       "slug": "suze-2023",
       "year": 2023,
@@ -29,13 +36,6 @@
       "year": 2026,
       "myRating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/3/4/3/9/8/1234398-finding-emily-0-600-0-900-crop.jpg"
-    },
-    {
-      "title": "The Drama",
-      "slug": "the-drama",
-      "year": 2026,
-      "myRating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/0/5/4/9/4/1205494-the-drama-0-600-0-900-crop.jpg"
     }
   ]
 }
