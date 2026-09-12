@@ -3,6 +3,20 @@
   "profileUrl": "https://letterboxd.com/irenesucks/",
   "movies": [
     {
+      "title": "Practical Magic 2",
+      "slug": "practical-magic-2",
+      "year": 2026,
+      "myRating": 3.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/8/5/0/2/2/1185022-practical-magic-2-0-600-0-900-crop.jpg"
+    },
+    {
+      "title": "Practical Magic",
+      "slug": "practical-magic",
+      "year": 1998,
+      "myRating": 2.0,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/4/8/3/2/2/48322-practical-magic-0-600-0-900-crop.jpg"
+    },
+    {
       "title": "Spider-Man: Brand New Day",
       "slug": "spider-man-brand-new-day",
       "year": 2026,
@@ -22,20 +36,6 @@
       "year": 2026,
       "myRating": 1.5,
       "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/5/6/9/1/0/1156910-scary-movie-2026-0-600-0-900-crop.jpg"
-    },
-    {
-      "title": "Michael",
-      "slug": "michael-2026",
-      "year": 2026,
-      "myRating": 2.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/8/4/1/1/0/3/841103-michael-2026-0-600-0-900-crop.jpg"
-    },
-    {
-      "title": "Finding Emily",
-      "slug": "finding-emily",
-      "year": 2026,
-      "myRating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/1/2/3/4/3/9/8/1234398-finding-emily-0-600-0-900-crop.jpg"
     }
   ]
 }
