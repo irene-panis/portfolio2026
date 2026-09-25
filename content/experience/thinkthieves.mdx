@@ -1,0 +1,46 @@
+---
+title: "Think Thieves"
+date: "2024"
+type: "personal"
+order: 4
+---
+
+## Overview
+
+<span className="highlighted">Think Thieves</span> is a re-imagining of the official 100 Thieves
+website, designed to place a greater emphasis on the organization's
+<span className="highlighted">esports teams and content creators</span>. While the original site
+focuses heavily on the broader 100 Thieves brand, I wanted to create an experience that put the
+organization's competitive teams and live content at the forefront.
+
+![Think Thieves screenshot](/images/experience/thinkthieves-1.png)
+<div className="screenshot-grid">
+  <img src="/images/experience/thinkthieves-2.png" alt="Think Thieves screenshot" />
+  <img src="/images/experience/thinkthieves-3.png" alt="Think Thieves screenshot" />
+  <img src="/images/experience/thinkthieves-4.png" alt="Think Thieves screenshot" />
+</div>
+
+The application provides users with information about upcoming esports matches and currently live
+streams in one centralized location. Match data is retrieved for 100 Thieves'
+<span className="highlighted">VALORANT, League of Legends, and Call of Duty League</span> teams,
+while live streams from 100 Thieves creators are surfaced from both Twitch and YouTube.
+
+To keep the displayed information current, <span className="highlighted">web scraping and APIs</span>
+are used together. VALORANT match data is collected by scraping VLR.gg, while League of Legends
+and Call of Duty League match data is retrieved through the Liquipedia API. Live Twitch streams
+are retrieved through the Twitch API, while YouTube streams are identified by scraping the channels
+of creators who stream on the platform.
+
+Because these data sources can be queried frequently, <span className="highlighted">Redis</span>
+is used to cache match and stream data and prevent unnecessary API requests and web scrapes. The
+Puppeteer-based scraper runs through an <span className="highlighted">Express</span> backend,
+while the frontend was built with <span className="highlighted">React</span>.
+
+Building Think Thieves gave me hands-on experience working with external APIs, web scraping,
+caching strategies, and combining multiple data sources into a single application. It also
+strengthened my understanding of building a frontend around dynamic, frequently changing data
+rather than relying solely on a static backend dataset.
+
+The project is a personal re-imagining rather than an official 100 Thieves product, and much of
+the imagery and copywriting was borrowed from the organization's official website for the purposes
+of the project.

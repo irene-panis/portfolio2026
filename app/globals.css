@@ -49,3 +49,14 @@ body {
   font-weight: bold;
   padding: 0 0.1rem;
 }
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.screenshot-grid img {
+  width: 100%;
+  height: auto;
+}
