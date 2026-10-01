@@ -3,6 +3,13 @@
   "profileUrl": "https://letterboxd.com/irenesucks/",
   "movies": [
     {
+      "title": "Unabomber",
+      "slug": "unabomber-2026",
+      "year": 2026,
+      "myRating": 2.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/3/6/9/2/1/1/1369211-unabomber-2026-0-600-0-900-crop.jpg"
+    },
+    {
       "title": "Resident Evil",
       "slug": "resident-evil-2026",
       "year": 2026,
@@ -29,13 +36,6 @@
       "year": 2026,
       "myRating": 4.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/8/7/2/8/7/1/872871-spider-man-brand-new-day-0-600-0-900-crop.jpg"
-    },
-    {
-      "title": "Suze",
-      "slug": "suze-2023",
-      "year": 2023,
-      "myRating": 3.5,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/9/3/7/1/1/9/937119-suze-2023-0-600-0-900-crop.jpg"
     }
   ]
 }
