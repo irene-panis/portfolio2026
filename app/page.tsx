@@ -17,7 +17,7 @@ export default function Home() {
         <p>I build web and mobile applications using TypeScript, React, React Native, Node.js, and PostgreSQL. I&apos;m always open to learning new technologies and looking for better ways to build.</p>
         <p>When I&apos;m not writing code, I&apos;m typically gaming,{' '}
           catching another concert, or trying new foods. Things I&apos;m big on:{' '}
-          film photography, true crime documentaries, and 100 Thieves VALORANT.
+          film photography, reality TV (like Big Brother), and 100 Thieves VALORANT.
         </p>
         <p>Let&apos;s chat sometime :)</p>
         <p>
