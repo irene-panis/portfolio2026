@@ -3,6 +3,13 @@
   "profileUrl": "https://letterboxd.com/irenesucks/",
   "movies": [
     {
+      "title": "The Babadook",
+      "slug": "the-babadook",
+      "year": 2014,
+      "myRating": 2.5,
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/6/9/7/2/8/169728-the-babadook-0-600-0-900-crop.jpg"
+    },
+    {
       "title": "Unabomber",
       "slug": "unabomber-2026",
       "year": 2026,
@@ -29,13 +36,6 @@
       "year": 1998,
       "myRating": 2.0,
       "poster": "https://a.ltrbxd.com/resized/film-poster/4/8/3/2/2/48322-practical-magic-0-600-0-900-crop.jpg"
-    },
-    {
-      "title": "Spider-Man: Brand New Day",
-      "slug": "spider-man-brand-new-day",
-      "year": 2026,
-      "myRating": 4.0,
-      "poster": "https://a.ltrbxd.com/resized/film-poster/8/7/2/8/7/1/872871-spider-man-brand-new-day-0-600-0-900-crop.jpg"
     }
   ]
 }
