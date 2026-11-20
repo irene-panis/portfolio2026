@@ -1,0 +1,109 @@
+---
+title: "thoughts on neetcode and yet another betrayal by both goodreads and letterboxd"
+date: "19 Nov 2026"
+tags:
+  - APIs
+  - Data Structures & Algorithms
+  - RSS
+order: 3
+---
+
+Hello all!
+
+It's been a while since I've written a blog post. I told myself I'd keep up with it, even added "write blog post" to my 
+little to-do list I've got on the side every time I open up a new tab on Chrome, and yet it sat there staring at me for 
+four months while I pretended I did not see it.
+
+My bad.
+
+I do enjoy writing, I do, but it kind of is in the same category of activities for me as reading these days, which means I 
+have to be in a really specific mood to want to do it.
+
+Here I am, though. Back for a little update on what I've been up to and some recent changes to my portfolio.
+
+First: what I've been up to.
+
+One of the things that has taken my interest in recent months is LeetCode. To preface, I don't think you need to be 
+good at LeetCode to be a good developer. Buuuut I just think it's kind of fun. Coding has always been like a puzzle to 
+me, and these silly DSA problems are like little puzzles to me. It's kind of addicting, sorry.
+
+Unlike half of the people grinding LeetCode today, I am not a computer science student with a dozen DSA classes under my 
+belt (more like one DSA class from 2020). So I had to start from scratch.
+
+Which brings me to my very impromptu decision to purchase NeetCode Pro.
+
+Honestly, I'm fully aware that you can get a pretty good grasp on DSA just from free YouTube videos. But the idea of 
+having access to dozens upon dozens of lessons, an AI chatbot helper, and a private Discord server for other NeetCode students 
+kind of sold it for me. And frankly, after over a month of using it, I'll say it was kind of worth it.
+
+Obviously I don't think people should shill out money they don't have for NeetCode Pro. But if you do have the money, 
+it's a nice little thing to have. So I'm not mad about it.
+
+<figure>
+  <img src="/images/blog/neetcode-2.png" alt="Screenshot of my NeetCode roadmap" />
+  <figcaption>My NeetCode 150 progress.</figcaption>
+</figure>
+
+Admittedly I've been slacking a bit on getting my daily problems in, so it's something I need to get back on soon. I think, 
+even outside of its perceived necessity for SWE interviews, it's just a good thing to keep practicing to keep your mind sharp. 
+
+Last time I checked, I was smack-dab in the middle of the Linked Lists category on the NeetCode roadmap (free feature, 
+by the way!). Thinking about it now, that category absolutely kicked my butt and sooner or later I just need to suck it up 
+and face it again. I think I had an alright grasp on the DSA categories (arrays/hashing, two pointers, binary search, etc) 
+up until that point, and then each new Linked List problem felt impossible to comprehend, which felt pretty discouraging.
+
+To be fair, though, those were my initial feelings on the Stack category (curse you 
+[Car Fleet](https://leetcode.com/problems/car-fleet/description/) and 
+[Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)) 
+and I kind of sort of got a grasp on that one eventually.
+
+Anyway, enough rambling about my silly little word problems.
+
+Next: some updates on my portfolio.
+
+I'm very disappointed to announce that, after [my initial shelf setup in July](/blog/portfolio-shelf) where I lambasted both
+Letterboxd and Goodreads for not providing APIs for me to retrieve my recent book and movie reviews, they have once again 
+recently betrayed me.
+
+This came to my attention upon getting several emails from GitHub over the course of several days, alerting me of a 
+failed GitHub Actions workflow. Seems like Letterboxd recently cracked down on scraping because the workflow I set to 
+run my Letterboxd scraper to grab my latest movies and update my movie shelf just stopped working. Unlucky!
+
+<figure>
+  <img src="/images/blog/neetcode-1.png" alt="Screenshot of failed GitHub Actions workflows" />
+  <figcaption>like ok bro we get it</figcaption>
+</figure>
+
+Kind of funny, though - for all the hell I give Google AI overview for being terrible, it actually suggested an 
+alternative approach for retrieving my Letterboxd movies which was right under my nose: the RSS feed.
+
+Now, I actually am not familiar with RSS at all so I didn't even know this was a thing you could do, but I'm happy to 
+learn new things so I'm not mad that I had to ditch the web scraper. Just kind of embarrassed that I was using a Python 
+web scraper and GitHub Actions workflow in the first place.
+
+I set up a helper with an RSS parser to read my Letterboxd profile's RSS feed and retrieve my five latest movies. 
+This eliminated the need for any sort of GitHub Action and regularly-updated JSON file at all. I could just set up a 
+cache and parse the feed when a user visits my shelf, similar to how my music and book shelves operate on on-visit API 
+calls and caching.
+
+Worked like a charm!
+
+Anyway, trying to fix this Letterboxd issue actually brought to my attention the fact that my book shelf fetching my 
+recent Goodreads reviews was also not working!
+
+After a bit of Googling I found out that Goodreads recently retired their RSS feed feature (which my unofficial Goodreads 
+API operated on) since it was "low-usage". Bro, I was using that. There was usage occurring on this very site.
+
+But it was fine, because some more Googling yielded an even better and more recently maintained unofficial Goodreads API 
+called [piratereads](https://www.piratereads.com/). So shout out to the dev responsible for that! My book shelf, and my 
+1-star rating of <i>The Sluts</i> by Dennis Cooper, lives to see another day.
+
+So that's what I have for updates: I've been learning about DSA and RSS feeds, and my shelf has got some new things going 
+on under the hood.
+
+I'd like to later make a more in-depth post about what I'm learning with data structures & algorithms, and ideally by 
+then I'll have conquered Linked Lists. We can only hope.
+
+Until next time!
+
+Irene
