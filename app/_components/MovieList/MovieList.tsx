@@ -1,10 +1,10 @@
-import { getLetterboxdData } from "@/lib/letterboxd";
+import { getLetterboxdRssData } from "@/lib/letterboxdRss";
 import ShelfCover from "@/app/_components/ShelfCover";
 
-const { movies } = getLetterboxdData();
+const MovieList = async () => {
+  const movies = await getLetterboxdRssData();
 
-const MovieList = () => {
-  if (!movies.length) {
+  if (!movies?.length) {
     return null;
   }
 
